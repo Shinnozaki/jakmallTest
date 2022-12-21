@@ -1,70 +1,13 @@
-# Getting Started with Create React App
+Pada page pertama, terdapat form dimana default state dari semua input berupa kosong. Page pertama ini merupakan step 1(default) saat website ini pertama kali di load.
+Form ini dijadikan component yang menggunakan react-form-hook dengan mode onchange, sehingga setiap user melakukan perubahan pada input, maka validasi akan ter-update. Validasi form dilakukan pada registerOptions, dimana saat onChange, maka akan dilakukan setState kepada setiap input.
+Jika input tidak sesuai dengan validasi, maka error message akan dimunculkan, dan pada styled components, style input akan berubah. Jika input sudah sesuai dengan validasi, maka style input juga akan berubah.
+Pada form bagian checkbox dropshipper, default state berupa true. Jika user melakukan perubahan pada checkbox, maka akan dilakukan setState dengan mengubah semua input menjadi empty string, dan melakukan perubahan pada style input. Pada form input dropshipper juga akan dilakukan clearErrors.
+Selanjutnya pada komponen summary, state default pada total adalah 500,000. Jika checkbox pada dropshipper true, maka akan dilakukan setState total dijumlahkan dengan 5,900.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Setelah semua komponen sesuai, dan user melakukan submit, Terdapat state pada component step yang akan di increment pada function handleStep, dan akan disimpan pada variabel nextStep, sehingga user dapat melanjutkan ke page 2.
+Pada page kedua, terdapat komponen radioGroup dengan value dan option konstan yang akan di map. Saat user memilih salah satu radioButton nya, maka akan dilakukan setStateValue berdasarkan key pada radio button yang dipilih.
+Untuk step diatas satu (dua/tiga), Komponen summary pada page kedua akan menampilkan state berupa nama, due dan biaya shipment. Kemudian akan melakukan setState total yang menjumlahkan biaya shipment tersebut. Nama dari payment akan ditampilkan pada button submit dengan cara mengakses variabel payment state tersebut.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Setelah user melakukan submit pada page kedua, maka component step akan melakukan increment pada function handleStep, sehingga user dapat melanjutkan ke page 3
+Pada page ketiga, sebuah Order ID akan di generate menggunakan function genId. Lalu dibawahnya, terdapat link "back to homepage" dimana semua inputan user akan dikembalikan ke default state (kosong), dan step kembali ke 1.
+Komponen summary pada page kedua akan menampilkan state berupa nama, due dan biaya shipment, payment method, Kemudian akan melakukan setState total yang menjumlahkan biaya shipment tersebut.
